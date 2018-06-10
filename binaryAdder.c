@@ -38,7 +38,7 @@ int main(void){
     printf("HA : s0 = %d , c0 = %d\n",s[0],c[0]);
     for(int i=1;i<NUM;i++){
         FA(a[i],b[i],c[i-1],&s[i],&c[i]);
-        printf("FA : s%d = %d , c%d = %d\n",i,s[i],i,s[i]);
+        printf("FA : s%d = %d , c%d = %d\n",i,s[i],i,c[i]);
     }
 
     printf("\nA+B = ");
