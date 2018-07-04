@@ -34,6 +34,8 @@ int main(void){
     }
     printf("\n");
 
+
+
     HA(a[0],b[0],&s[0],&c[0]);
     printf("HA : s0 = %d , c0 = %d\n",s[0],c[0]);
     for(int i=1;i<NUM;i++){
@@ -46,6 +48,8 @@ int main(void){
         printf("%d",s[i]);
     }
     printf("\n");
+
+
 
 
     return 0;
@@ -66,9 +70,9 @@ int not(int a){
     if(a==1){
         s=0;
     }else{
-        s=1;
+    s=1;
     }
-    return s;
+                return s;
 }
 
 int nand(int a, int b){
@@ -104,4 +108,21 @@ void FA(int a,int b,int pre_c,int *s,int *c){
     or1 = or(HAc1,HAc2);
     *s = HAs2;
     *c = or1;
+}
+
+void binaryAdder(int a[], int b[], int s[], int c){
+
+    HA(a[0],b[0],&s[0],&c[0]);
+    printf("HA : s0 = %d , c0 = %d\n",s[0],c[0]);
+    for(int i=1;i<NUM;i++){
+        FA(a[i],b[i],c[i-1],&s[i],&c[i]);
+        printf("FA : s%d = %d , c%d = %d\n",i,s[i],i,c[i]);
+    }
+
+    printf("\nA+B = ");
+    for(int i=NUM-1;i>=0;i--){
+        printf("%d",s[i]);
+    }
+    printf("\n");
+
 }
