@@ -53,13 +53,8 @@ int or(int a, int b){
 }
 
 int not(int a){
-    int s;
-    if(a==1){
-        s=0;
-    }else{
-        s=1;
-    }
-    return s;
+    a==0? (a=1) : (a=0); 
+    return a;
 }
 
 int nand(int a, int b){
